@@ -94,6 +94,11 @@ jobs:
         run: |
           pip list
 
+      # Step 3.5: Test ONNX
+      - name: Test ONNX package
+        run: |
+          python -c "from onnx.onnx_cpp2py_export import ONNX_ML"
+
       # Step 4: Lint.
       - name: Lint with flake8
         run: |
